@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Python@SuperMap shapefile 导入到超图文件数据集(udb) | WebGIS</title>
+    <meta name="generator" content="VuePress 1.4.1">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="用地图来描述生活">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/assets/css/0.styles.c6efea83.css" as="style"><link rel="preload" href="/assets/js/app.485151e6.js" as="script"><link rel="preload" href="/assets/js/3.8f616507.js" as="script"><link rel="preload" href="/assets/js/1.71e9f9ac.js" as="script"><link rel="preload" href="/assets/js/36.fe3936fc.js" as="script"><link rel="prefetch" href="/assets/js/10.730a55fd.js"><link rel="prefetch" href="/assets/js/11.435f55ae.js"><link rel="prefetch" href="/assets/js/12.bcdd2a94.js"><link rel="prefetch" href="/assets/js/13.9a9a06e0.js"><link rel="prefetch" href="/assets/js/14.62c4a1f9.js"><link rel="prefetch" href="/assets/js/15.a2798cf9.js"><link rel="prefetch" href="/assets/js/16.cea08a05.js"><link rel="prefetch" href="/assets/js/17.a5a5122d.js"><link rel="prefetch" href="/assets/js/18.2121204e.js"><link rel="prefetch" href="/assets/js/19.02047018.js"><link rel="prefetch" href="/assets/js/20.8199bd37.js"><link rel="prefetch" href="/assets/js/21.7553feb6.js"><link rel="prefetch" href="/assets/js/22.16cc279d.js"><link rel="prefetch" href="/assets/js/23.3c30ee29.js"><link rel="prefetch" href="/assets/js/24.29a849a5.js"><link rel="prefetch" href="/assets/js/25.dbee7e19.js"><link rel="prefetch" href="/assets/js/26.4e8e3aa8.js"><link rel="prefetch" href="/assets/js/27.dde57494.js"><link rel="prefetch" href="/assets/js/28.6a7fd89d.js"><link rel="prefetch" href="/assets/js/29.882dbf77.js"><link rel="prefetch" href="/assets/js/30.b1b6f5fc.js"><link rel="prefetch" href="/assets/js/31.236bf387.js"><link rel="prefetch" href="/assets/js/32.0ee3b7eb.js"><link rel="prefetch" href="/assets/js/33.48a2ec68.js"><link rel="prefetch" href="/assets/js/34.52f72629.js"><link rel="prefetch" href="/assets/js/35.9597b6cb.js"><link rel="prefetch" href="/assets/js/37.20ac3ccd.js"><link rel="prefetch" href="/assets/js/38.b962e988.js"><link rel="prefetch" href="/assets/js/39.649b7728.js"><link rel="prefetch" href="/assets/js/4.740a980a.js"><link rel="prefetch" href="/assets/js/40.597f36d5.js"><link rel="prefetch" href="/assets/js/5.dd96fe1c.js"><link rel="prefetch" href="/assets/js/6.7afafac1.js"><link rel="prefetch" href="/assets/js/7.70058d2a.js"><link rel="prefetch" href="/assets/js/8.dda6de5a.js"><link rel="prefetch" href="/assets/js/9.f3b439cd.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c6efea83.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div><div class="theme-container" data-v-319dd33c><div data-v-319dd33c><div id="loader-wrapper" class="loading-wrapper" data-v-4b73742e data-v-319dd33c data-v-319dd33c><div class="loader-main" data-v-4b73742e><div data-v-4b73742e></div><div data-v-4b73742e></div><div data-v-4b73742e></div><div data-v-4b73742e></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-1e2a0cc0 data-v-319dd33c data-v-319dd33c><h3 class="title" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0>WebGIS</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><input type="password" value="" data-v-1e2a0cc0> <span data-v-1e2a0cc0>Konck! Knock!</span> <button data-v-1e2a0cc0>OK</button></label> <div class="footer" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><span data-v-1e2a0cc0><i class="iconfont reco-theme" data-v-1e2a0cc0></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-1e2a0cc0>vuePress-theme-reco</a></span> <span data-v-1e2a0cc0><i class="iconfont reco-copyright" data-v-1e2a0cc0></i> <a data-v-1e2a0cc0><span data-v-1e2a0cc0>webgis</span>
+            
+          <span data-v-1e2a0cc0>2017 - </span>
+          2020
+        </a></span></div></div> <div class="hide" data-v-319dd33c><header class="navbar" data-v-319dd33c><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.jpeg" alt="WebGIS" class="logo"> <span class="site-name">WebGIS</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      WebGIS
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/ArcGIS/" class="nav-link"><i class="iconfont undefined"></i>
+  ArcGIS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Cesium/" class="nav-link"><i class="iconfont undefined"></i>
+  Cesium
+</a></li><li class="dropdown-item"><!----> <a href="/categories/GeoServer/" class="nav-link"><i class="iconfont undefined"></i>
+  GeoServer
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Python/" class="nav-link"><i class="iconfont undefined"></i>
+  Python
+</a></li><li class="dropdown-item"><!----> <a href="/categories/GIS/" class="nav-link"><i class="iconfont undefined"></i>
+  GIS
+</a></li></ul></div></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      更多
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.jianshu.com/u/90d57601c766" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-jianshu"></i>
+  简书
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://mp.weixin.qq.com/s/mXFqeUTegdvPliXknAAG_A" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-wechat"></i>
+  公众号
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-319dd33c></div> <aside class="sidebar" data-v-319dd33c><div class="personal-info-wrapper" data-v-6c8ffc9c><img src="/avatar.jpeg" alt="author-avatar" class="personal-img" data-v-6c8ffc9c> <h3 class="name" data-v-6c8ffc9c>
+    webgis
+  </h3> <div class="num" data-v-6c8ffc9c><div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>26</h3> <h6 data-v-6c8ffc9c>文章</h6></div> <div data-v-6c8ffc9c><h3 data-v-6c8ffc9c>15</h3> <h6 data-v-6c8ffc9c>标签</h6></div></div> <hr data-v-6c8ffc9c></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      WebGIS
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/ArcGIS/" class="nav-link"><i class="iconfont undefined"></i>
+  ArcGIS
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Cesium/" class="nav-link"><i class="iconfont undefined"></i>
+  Cesium
+</a></li><li class="dropdown-item"><!----> <a href="/categories/GeoServer/" class="nav-link"><i class="iconfont undefined"></i>
+  GeoServer
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Python/" class="nav-link"><i class="iconfont undefined"></i>
+  Python
+</a></li><li class="dropdown-item"><!----> <a href="/categories/GIS/" class="nav-link"><i class="iconfont undefined"></i>
+  GIS
+</a></li></ul></div></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间线
+</a></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      更多
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.jianshu.com/u/90d57601c766" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-jianshu"></i>
+  简书
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://mp.weixin.qq.com/s/mXFqeUTegdvPliXknAAG_A" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-wechat"></i>
+  公众号
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Python@SuperMap shapefile 导入到超图文件数据集(udb)</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/views/python/iobjectspy/conversion.html#开发环境" class="sidebar-link">开发环境</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/python/iobjectspy/conversion.html#依赖环境配置" class="sidebar-link">依赖环境配置</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-1e2a0cc0 data-v-319dd33c><h3 class="title" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0>Python@SuperMap shapefile 导入到超图文件数据集(udb)</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><input type="password" value="" data-v-1e2a0cc0> <span data-v-1e2a0cc0>Konck! Knock!</span> <button data-v-1e2a0cc0>OK</button></label> <div class="footer" style="display:none;" data-v-1e2a0cc0 data-v-1e2a0cc0><span data-v-1e2a0cc0><i class="iconfont reco-theme" data-v-1e2a0cc0></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-1e2a0cc0>vuePress-theme-reco</a></span> <span data-v-1e2a0cc0><i class="iconfont reco-copyright" data-v-1e2a0cc0></i> <a data-v-1e2a0cc0><span data-v-1e2a0cc0>webgis</span>
+            
+          <span data-v-1e2a0cc0>2017 - </span>
+          2020
+        </a></span></div></div> <div data-v-319dd33c><main class="page"><div class="page-title" style="display:none;"><h1>Python@SuperMap shapefile 导入到超图文件数据集(udb)</h1> <hr> <div data-v-484a899e><i class="iconfont reco-account" data-v-484a899e><span data-v-484a899e>webgis</span></i> <i class="iconfont reco-date" data-v-484a899e><span data-v-484a899e>2020-02-02</span></i> <!----> <i class="iconfont reco-tag tags" data-v-484a899e><span class="tag-item" data-v-484a899e>
+      python
+    </span><span class="tag-item" data-v-484a899e>
+      超图
+    </span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><h2 id="开发环境"><a href="#开发环境" class="header-anchor">#</a> 开发环境</h2> <div class="language-python line-numbers-mode"><pre class="language-python"><code>conda<span class="token punctuation">:</span><span class="token number">4.8</span><span class="token number">.2</span> <span class="token comment">#通过 anaconda 安装 后自带</span>
+python<span class="token punctuation">:</span><span class="token number">3.6</span>
+平台：winsows <span class="token number">10</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h2 id="依赖环境配置"><a href="#依赖环境配置" class="header-anchor">#</a> 依赖环境配置</h2> <ol><li><p>直接下载超图发布的，配置好的环境</p> <blockquote><p>miniconda 链接:https://pan.baidu.com/s/1T9dZjG_J3NXu45Sf6y-NHw 密码:nfei<br>
+java 环境 链接：https://pan.baidu.com/s/1lJkvo3yLNMbu3Zdy-YcggQ 提取码：l3ob</p></blockquote></li> <li><p>环境配置</p> <ul><li>解压 miniconda</li> <li>解压 java 环境包，然后配置 Bin 文件夹路径到 path 环境变量下</li></ul></li> <li><p>代码如下</p> <div class="language-py line-numbers-mode"><pre class="language-py"><code><span class="token comment"># -*- coding: utf-8 -*-</span>
+ <span class="token comment"># @Time    : 2020/3/17 23:59</span>
+ <span class="token comment"># @Author  : seelingzheng</span>
+ <span class="token comment"># @公众号  : seeling_gis</span>
+ <span class="token comment"># @File    : importshp.py</span>
+ <span class="token comment"># @Software: PyCharm</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>from  iobjectspy.conversion import  import_shape
+import os,sys
+from os import path</p> <p>shp_dir = r'F:\gisdata\实验数据\丰台gdb\output\样例'</p> <p>udb_dir = r'F:\gisdata\实验数据\丰台gdb\test.UDB'</p> <p>def loop_file(file):
+files = os.listdir(file)
+for f in files:
+new_file =  file + os.sep + f
+print (new_file)
+if path.isdir(new_file):
+loop_file(new_file)
+elif  path.split(new_file)[1][-3:] == 'shp':
+print(new_file+'*'*4)
+shp_udb(new_file)</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>
+
+def shp_udb(f):
+    result = import_shape(f,udb_dir)
+    print_info(result)
+
+def print_info(result):
+    if result is not None:
+        for item in result:
+            name = item
+            if not isinstance(item, str):
+                name = item.name
+            sys.stdout.write('导入数据成功，导入到数据集 %s\n'% name)
+
+if __name__ == '__main__':
+    loop_file(shp_dir)
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div></li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>---
+# 环境配置中可能出现的问题
+1. 报 numpy 版本问题，可以卸载原来的重新安装如下版本，这个版本号是超图技术客服给的
+ ```python
+ # 卸载 numpy
+ pip uninstall numpy  imgaug
+ # 重新安装
+ pip install numpy == 1.15.0
+ pip install opencv-python==3.1.0.5
+ pip install imgaug==0.2.6
+ pip install opencv-python-headless
+
+ ```
+2. pip 镜像环境配置
+```python
+#windows 下
+%HOMEPATH%\pip\pip.ini  #如果没有可以手动创建
+#在pip.ini文件中添加
+ [global]
+ index-url = http://mirrors.aliyun.com/pypi/simple/
+ [install]
+ trusted-host=mirrors.aliyun.com
+
+ # 也可以直接在 使用pip的时候在后面加入 镜像参数
+ pip install packagename  -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">4/19/2020, 2:36:25 PM</span></div></footer> <!----></main> <!----> <div style="display:none;" data-v-319dd33c data-v-319dd33c><div class="comments-wrapper" data-v-319dd33c><!----></div></div></div></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-a81d141e data-v-a81d141e><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-a81d141e><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-a81d141e></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-a81d141e></path></svg></div></div></div>
+    <script src="/assets/js/app.485151e6.js" defer></script><script src="/assets/js/3.8f616507.js" defer></script><script src="/assets/js/1.71e9f9ac.js" defer></script><script src="/assets/js/36.fe3936fc.js" defer></script>
+  </body>
+</html>
